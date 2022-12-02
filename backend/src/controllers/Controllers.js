@@ -1,6 +1,6 @@
 const { response } = require("express");
 
-const getAll = async(req, res) => {
+const getAll = (require, response) => {
     return response.status(200).json({message: 'Controller em funcionamento!'});
 };
 
