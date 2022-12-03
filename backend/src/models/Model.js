@@ -6,10 +6,10 @@ const getAll = async () => {
   };
 
 const createPro = async (produtos) => {
-    const { nome, preco, descricao, quantidade, imagem } = produtos;
-    const query = 'INSERT INTO produtos(nome, preco, descricao, quantidade, imagem) VALUES (?, ?, ?, ?, ?)';
-    const [createPro] = await connection.execute(query, [nome, preco, descricao, quantidade, imagem]);
-    return {insertId: createPro.insertId};
+    const { id, nome, preco, descricao, quantidade, imagem } = produtos;
+    const query = 'INSERT INTO produtos(id, nome, preco, descricao, quantidade, imagem) VALUES (?, ?, ?, ?, ?, ?)';
+    const [createPro] = await connection.execute(query, [id, nome, preco, descricao, quantidade, imagem]);
+    return createPro;
   };
   
   const deletePro = async (id) => {
